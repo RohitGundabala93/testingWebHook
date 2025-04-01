@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\CodePushMail;
+use Illuminate\Support\Facades\Log;
 
 class GitWebhookController extends Controller
 {
@@ -17,7 +18,7 @@ class GitWebhookController extends Controller
         $payload = $request->all();
         
         // You can log the payload for debugging
-        \Log::info('GitHub Webhook Payload:', $payload);
+        Log::info('GitHub Webhook Payload:', $payload);
 
         // Send the email after a push event
         $commitMessage = $payload['head_commit']['message'];
