@@ -8,6 +8,7 @@ class TestController extends Controller
 {
     public function testAdd(Request $request)
     {
+        dd('test123');
         $a = $request->input('val1',10);
         $b = $request->input('val2',5);
         return response($a + $b, 200);
