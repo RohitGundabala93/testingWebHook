@@ -13,8 +13,8 @@ class GitWebhookController extends Controller
     {
         //test
         // Validate GitHub webhook signature (optional but recommended for security)
-        $this->validateGitHubSignature($request);
-
+        $val = $this->validateGitHubSignature($request);
+        logger('response'.$val);
         // Handle the push event
         $payload = $request->all();
         
