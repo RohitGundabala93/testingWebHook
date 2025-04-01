@@ -32,7 +32,7 @@ Route::get('/s123adf',[TestController::class,'Sub']);
 
 Route::post('/webhook/email', [EmailWebhookController::class, 'handleWebhook']);
 Route::post('/webhook/email', [WebhookController::class, 'handleEmailWebhook']);
-Route::post('/webhook/git', [GitWebhookController::class, 'handleGitWebhook']);
+//Route::post('/webhook/git', [GitWebhookController::class, 'handleGitWebhook']);
 // routes/web.php
-Route::post('/webhook/git', 'GitWebhookController@handlePush');
+Route::post('/webhook/git', [GitWebhookController::class, 'handlePush']);
 
