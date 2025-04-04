@@ -11,7 +11,6 @@ class GitWebhookController extends Controller
 {
     public function handlePush(Request $request)
     {
-        //test
 
         // Validate GitHub webhook signature (optional but recommended for security)
         $val = $this->validateGitHubSignature($request);
